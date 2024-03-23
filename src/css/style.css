@@ -547,7 +547,25 @@ span {
     }
 }
 @media(max-width:991px){
-    
+    .header{
+        .header__navbar{
+            & a:nth-child(1),
+            & a:nth-child(2){
+                color:var(--main-color); 
+            }
+            .header__navbar__link{
+                &.active{
+                 &::before{
+                    background:var(--main-color);
+                    opacity: .7;
+                 }     
+            }
+            }
+        }
+
+    }
+   
+   
     .home{
         .home__content{
             
@@ -566,4 +584,43 @@ span {
             display: none;
         }
     }
+    .services,
+    .portafolio{
+        padding-bottom: 7rem;
+    }
+    .contact{
+        min-height: auto;
+    }
+    .footer{
+        padding: 2rem 3%;
+    }
+}
+@media(max-width:768px){
+    #menu-icon{
+        display: block;
+    }
+    .header{
+        .header__navbar{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 1rem 3%;
+            background: var(--bg-color);
+            border-top: .1rem solid rgba(0,0,0,.2);
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+            & a{
+                display: block;
+                font-size: 2rem;
+                margin: 3rem 0;
+                color:var(--text-color);
+            }
+            & a:nth-child(1),
+            & a:nth-child(2){
+                color:var(--text-color); 
+            }
+        }
+
+    }
+   
 }
