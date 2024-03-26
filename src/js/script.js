@@ -41,3 +41,20 @@ var swiper = new Swiper(".mySwiper", {
       prevEl: ".swiper-button-prev",
     },
   });
+
+  let DarkModeIcon=document.querySelector('#darkMode-icon');
+  DarkModeIcon.onclick=()=>{
+    DarkModeIcon.classList.toggle('bx-sun');
+    document.body.classList.toggle('dark-mode');
+  };
+
+  ScrollReveal({ 
+    reset: true,
+    distance:'80px',
+    duration:2000,
+    delay:200
+  });
+  ScrollReveal().reveal('.home__content, .heading', { origin: 'top' });
+  ScrollReveal().reveal('.home__img img, .services__container, .portafolio__container__box, .testimonial-wrapper, .contact form', { origin: 'bottom' });
+  ScrollReveal().reveal('.home__content__nombre, .about__img img', { origin: 'left' });
+  ScrollReveal().reveal('.home__content__titulo, .home__content__parrafo, .about__content', { origin: 'right' });

@@ -17,6 +17,11 @@
     --shadow-color:rgba(0,0,0,.2);
     --bg-size:963px;
 }
+.dark-mode{
+    --bg-color:#0b061f;
+    --text-color:#fdfdfd;
+    --shadow-color:rgba(0,0,0,.7);
+}
 html{
     font-size: 62.5%;
     overflow-x: hidden;
@@ -123,6 +128,23 @@ section{
 span {
     color:var(--main-color);
 }
+@keyframes professionRotate{
+    0%,20%{
+        transform: rotate(0deg);
+    }
+    25%,45%{
+        transform: rotate(-90deg);
+    }
+    50%,70%{
+        transform: rotate(-180deg);
+    }
+    75%,95%{
+        transform: rotate(-270deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
 .home{
     display: flex;
     align-items: center;
@@ -186,6 +208,7 @@ span {
             display: flex;
             justify-content: center;
             align-items: center;
+            animation: professionRotate 13s ease-out infinite;
             .home__profesion__content{
                 position: absolute;
                 left: 0;
@@ -702,5 +725,115 @@ span {
             }
         } 
     }
-   
+    .about{
+        flex-direction: column-reverse;
+        text-align: center;
+        .about__content{
+            & h2{
+                text-align: center;
+            }
+        }
+        .about__img img{
+            width: 70vw;
+            margin-top: -2rem;
+        }
+    }
+    .services{
+        & h2{
+            margin-bottom: 3rem;
+        }
+    }
+    .portafolio{
+        & h2{
+            margin-bottom: 3rem;
+        }
+        .portafolio__container{
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+    .testimonial-container{
+        .testimonial-wrapper{
+            padding: 5rem 0;
+            .testimonial-box{
+                .swiper-button-next,
+                .swiper-button-prev{
+                    display: none;
+                }
+                .testimonial-content{
+                    .testimonial-slide{
+                        padding: 3rem 2rem;
+                    }
+                }
+
+            }
+            
+        }
+    }
+}
+
+@media(width <=617px){
+    .portafolio{
+        & h2{
+            margin-bottom: 3rem;
+        }
+        .portafolio__container{
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@media(width <=488px){
+    .footer{
+        flex-direction: column-reverse;
+        & p{
+            text-align: center;
+            margin-top: 2rem;
+        }
+    }
+    .about{
+        .about__img img{
+            width: 90vw;
+            margin-top: -2rem;
+        }
+    }
+   html{
+    font-size: 50%;
+   }
+   #darkMode-icon{
+    right: 6rem;
+   }
+   .home{
+    padding: 0 3% 30rem;
+    .home__profesion{
+       
+        .home__profesion__box{
+          
+            .home__profesion__content{
+              
+                &:nth-child(1){
+                    transform: rotate(-90deg) translate(-110px,-220px);
+                }
+                &:nth-child(2){
+                    transform: rotate(0deg) translate(5px,-335px);
+                }
+                &:nth-child(3){
+                    transform: rotate(90deg) translate(-105px,-440px);
+                }
+                &:nth-child(4){
+                    transform: rotate(180deg) translate(-210px,-335px);
+                }
+            }
+           
+        }
+    } 
+   }
+   .contact{
+    & form{
+        .input-box{
+            & input{
+                width: 100%;
+            }
+        }
+    }
+   }
 }
