@@ -5,6 +5,69 @@ menuIcon.classList.toggle('bx-x');
 navbar.classList.toggle('active');
 };
 
+let botonabout=document.querySelector('.botonabout');
+let completo=document.querySelector('.completo');
+botonabout.onclick=()=>{
+  completo.classList.toggle('activo');
+  if(botonabout.innerHTML=='Leer Menos'){
+    botonabout.innerHTML="Leer Mas";
+  }
+  else{
+    botonabout.innerHTML="Leer Menos";
+  }
+  
+}
+
+let botonsoftware=document.querySelector('.botonsoftware');
+let completosoftware=document.querySelector('.completo-software');
+let iconossoftware=document.querySelector('.iconos-software');
+botonsoftware.onclick=()=>{
+  completosoftware.classList.toggle('activo');
+  iconossoftware.classList.toggle('activo');
+  if(botonsoftware.innerHTML=='Leer Menos'){
+    botonsoftware.innerHTML="Leer Mas";
+  }
+  else{
+    botonsoftware.innerHTML="Leer Menos";
+  }
+  
+}
+let botonase=document.querySelector('.botonase');
+let completoase=document.querySelector('.completo-ase');
+botonase.onclick=()=>{
+  completoase.classList.toggle('activo');
+  if(botonase.innerHTML=='Leer Menos'){
+    botonase.innerHTML="Leer Mas";
+  }
+  else{
+    botonase.innerHTML="Leer Menos";
+  }
+  
+}
+let botonwo=document.querySelector('.botonwo');
+let completowo=document.querySelector('.completo-wo');
+botonwo.onclick=()=>{
+  completowo.classList.toggle('activo');
+  if(botonwo.innerHTML=='Leer Menos'){
+    botonwo.innerHTML="Leer Mas";
+  }
+  else{
+    botonwo.innerHTML="Leer Menos";
+  }
+  
+}
+let botonca=document.querySelector('.botonca');
+let completoca=document.querySelector('.completo-ca');
+botonca.onclick=()=>{
+  completoca.classList.toggle('activo');
+  if(botonca.innerHTML=='Leer Menos'){
+    botonca.innerHTML="Leer Mas";
+  }
+  else{
+    botonca.innerHTML="Leer Menos";
+  }
+  
+}
 let sections = document.querySelectorAll('section');
 let navLinks= document.querySelectorAll('header nav a');
 
@@ -41,7 +104,23 @@ var swiper = new Swiper(".mySwiper", {
       prevEl: ".swiper-button-prev",
     },
   });
-
+  var swiper = new Swiper(".mySwiper2", {
+    spaceBetween: 30,
+      centeredSlides: true,
+      parallax: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      }
+  });
   let DarkModeIcon=document.querySelector('#darkMode-icon');
   DarkModeIcon.onclick=()=>{
     DarkModeIcon.classList.toggle('bx-sun');

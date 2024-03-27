@@ -11,8 +11,8 @@
 }
 :root{
     --bg-color:#fdfdfd;
-    --text-color:#333;
-    --main-color:#754ef9;
+    --text-color:#214b69;
+    --main-color:#4c8ab5;
     --white-color:#fdfdfd;
     --shadow-color:rgba(0,0,0,.2);
     --bg-size:963px;
@@ -71,7 +71,7 @@ body{
     .header__navbar__link{
         position: relative;
         font-size: 1.7rem;
-        color:var(--white-color);
+        color:#0b061f;
         font-weight: 500;
         margin-right: 3.5rem;
         &.active{
@@ -144,6 +144,12 @@ span {
     100%{
         transform: rotate(-360deg);
     }
+}
+.completo, .completo-software, .completo-ase, .iconos-software, .completo-wo, .completo-ca {
+    display: none;
+}
+.activo{
+    display: block;
 }
 .home{
     display: flex;
@@ -267,27 +273,56 @@ span {
         }
     }
 }
+
 .about{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:4rem;
-    .about__img img{
-        width: 40vw;
+    flex-direction: column;
+   
+    .about__box{
+        display: flex;
+    flex-direction: row;
+    padding: 2rem;
+        .about-wrapper{
+            width: 50%;
+            padding: 0rem 5rem;
+            .testimonial-box{
+                padding: 1rem;
+                border-radius: 2rem;
+                overflow: hidden;
+                .testimonial-content{
+                    .testimonial-slide{
+                        background: var(--bg-color);
+                        border-radius: 2rem;
+                        box-shadow: 0 .1rem .5rem var(--shadow-color);
+                        padding: 1rem 1rem;
+                        border-top: .8rem solid var(--main-color);
+                        border-bottom: .8rem solid var(--main-color);
+                        & img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+              
+            }
+          
+        }
+        .about__content{
+            & h2{
+                text-align: left;
+                line-height: 1.2;
+            }
+            & h3{
+                font-size: 2rem;
+            }
+            & p{
+                font-size: 1.6rem;
+                margin: 2rem 0 3rem;
+            }
+        }
     }
-    .about__content{
-        & h2{
-            text-align: left;
-            line-height: 1.2;
-        }
-        & h3{
-            font-size: 2rem;
-        }
-        & p{
-            font-size: 1.6rem;
-            margin: 2rem 0 3rem;
-        }
-    }
+    
     
 }
 .services{
@@ -345,12 +380,36 @@ span {
     grid-template-columns: repeat(3,1fr);
     align-items: center;
     gap: 2.5rem;
+   
     .portafolio__container__box{
         position: relative;
         display: flex;
         border-radius: 2rem;
         box-shadow: 0 0 1rem rgba(0,0,0,.1);
         overflow: hidden;
+        .portafolio__progreso__tab {
+            background-color: #f9fb6c; /* Color de la pestaña */
+            color: var(--text-color);
+            font-size: 2rem;
+            font-weight: 600;
+            padding: 5px 40px;
+            position: absolute;
+            top: 10px;
+            right: -35px;
+            border-top-left-radius: 5px;
+            transform: rotate(45deg);
+          }
+        .portafolio__tab {
+            background-color: #4CAF50; /* Color de la pestaña */
+            color: white;
+            font-size: 1.2rem;
+            padding: 5px 40px;
+            position: absolute;
+            top: 20px;
+            right: -45px;
+            border-top-left-radius: 5px;
+            transform: rotate(45deg);
+          }
         &:hover img{
             transform: scale(1.1);
          
@@ -726,17 +785,18 @@ span {
         } 
     }
     .about{
-        flex-direction: column-reverse;
-        text-align: center;
-        .about__content{
-            & h2{
-                text-align: center;
+        .about__box{
+            flex-direction: column;
+            text-align: center;
+            .about-wrapper{
+            width: 100%;
             }
-        }
-        .about__img img{
-            width: 70vw;
-            margin-top: -2rem;
-        }
+            .about__content{
+                & h2{
+                    text-align: center;
+                }
+            }
+        }   
     }
     .services{
         & h2{
@@ -783,6 +843,13 @@ span {
 }
 
 @media(width <=488px){
+    .about{
+        .about__box{
+            .about-wrapper{
+            width: 100%;
+            }
+        }   
+    }
     .footer{
         flex-direction: column-reverse;
         & p{
