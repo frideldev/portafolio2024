@@ -89,7 +89,23 @@ window.onscroll = () => {
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
 };
-
+var swiper2 = new Swiper(".mySwiper2", {
+  spaceBetween: 30,
+    centeredSlides: true,
+    parallax: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+});
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 50,
@@ -104,23 +120,7 @@ var swiper = new Swiper(".mySwiper", {
       prevEl: ".swiper-button-prev",
     },
   });
-  var swiper = new Swiper(".mySwiper2", {
-    spaceBetween: 30,
-      centeredSlides: true,
-      parallax: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      }
-  });
+
   let DarkModeIcon=document.querySelector('#darkMode-icon');
   DarkModeIcon.onclick=()=>{
     DarkModeIcon.classList.toggle('bx-sun');

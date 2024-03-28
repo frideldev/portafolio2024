@@ -370,6 +370,57 @@ span {
         }
     }
 }
+.actual{
+    min-height: auto;
+    padding-bottom: 7rem;
+    & h2{
+        margin-bottom: 5rem;
+    }
+    .services__container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        .services__container__box{
+            & img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                
+            }
+            flex: 1 1 30rem;
+            background: var(--bg-color);
+            padding: 3rem 2rem 4rem;
+            border-radius: 2rem;
+            box-shadow: 0 .1rem .5rem var(--shadow-color);
+            text-align: center;
+            border-top: .6rem solid var(--main-color);
+            border-bottom: .6rem solid var(--main-color);
+            transition:  .5s ease;
+           &:hover{
+            box-shadow: 0 .1rem 2rem var(--shadow-color);
+            transform: scale(1.02);
+           }
+            & i{
+                font-size: 7rem;
+                color: var(--main-color);
+            }
+            & h3{
+                font-size: 2.6rem;
+                transition:  .5s ease;
+                &:hover{
+                    color:var(--main-color);   
+               }
+               
+            }
+            & p{
+                font-size: 1.6rem;
+                margin: 1rem 0 3rem;
+            }
+        }
+    }
+}
 .portafolio{
    padding-bottom: 10rem;
    & h2{
@@ -429,7 +480,7 @@ span {
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(0,0,0,.1),var(--main-color));
+            background: linear-gradient(rgba(0, 0, 0, 0.705),var(--main-color));
             color: var(--white-color);
             display: flex;
             justify-content: center;
