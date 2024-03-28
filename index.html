@@ -13,6 +13,7 @@
 </head>
 <body>
     <header class="header">
+        <img src="src/img/logoapp.png" alt="">
         <a href="" class="header__logo">Portafolio</a>
         <nav class="header__navbar">
             <a class="header__navbar__link active" href="#home">Inicio</a>
@@ -38,7 +39,18 @@
                 <a href="https://youtube.com/frideldev"><i class='bx bxl-youtube' ></i></a>
                 <a href="https://www.linkedin.com/in/frideldev/"><i class='bx bxl-linkedin' ></i></a>
             </div>
-            <a href="#" class="btn">Descargue mi CV</a>
+            <a href="#" class="btn" onclick="abrirModal()">Descargue mi CV</a>
+    <!-- Contenedor para mostrar el PDF -->
+     <!-- Contenedor para el modal -->
+     <div id="pdfModal" class="modal">
+        <div class="modal-content">
+            <!-- Botón para cerrar el modal -->
+            <button onclick="cerrarModal()">Cerrar</button>
+
+            <!-- <iframe> para mostrar el PDF -->
+            <iframe id="pdfIframe" src="" width="700px" height="500px" style="border: none;"></iframe>
+        </div>
+    </div>
         </div>
         <div class="home__profesion">
             <div class="home__profesion__box">
@@ -266,22 +278,22 @@
             <div class="services__container__box">
                 <img src="src/img/startup/logooficial.png" alt="">
                 <h3>Meraki System</h3>
-                <p class="resumen-software">Una empresa de desarrollo de software con enfoque social con la vision de ser comprometida con la transformacion personal a traves de soluciones tecnologicas innovadoras.</p>
-                <p class="completo-software">Concluido el software brindo un soporte de seguimiento constante, ofreciendo nuevas versiones utiles para su negocio, capacitacion para el uso del software mediante didacticas e innovadoras metodologias de aprendizaje y con tecnologia de vanguardia adaptado a las necesidades de su negocio con previo analisis de su situacion e uso con un asesoramiento incluido para la mejor toma de decisiones.</p>
+                <p class="resumen-meraki">Una empresa de desarrollo de software con enfoque social con la vision de ser comprometida con la transformacion personal a traves de soluciones tecnologicas innovadoras.</p>
+                <p class="completo-meraki">Ofrece servicios de asesoramiento tecnologico, desarrollo de software, asesoramiento de startups con enfoque social mediante leanstartup.</p>
                 <div class="iconos-software">
                     <i class='bx bxl-php'></i>
                     <i class='bx bxl-angular' ></i>
                     <i class='bx bxl-postgresql' ></i>
                     <i class='bx bxl-flutter'></i> 
                 </div>
-                <a class="btn botonsoftware">Leer Mas</a>
+                <a class="btn botonmeraki">Leer Mas</a>
             </div>
             <div class="services__container__box">
                 <img src="src/img/startup/eduavi.png" alt="">
                 <h3>Eduavi</h3>
-                <p class="resumen-ase">Proyecto tecnologico que orienta , facilita y conecta a los padres y profesores para una mejor comunicacion con sus niños con dificultades de aprendizaje</p>
-                <p class="completo-ase">Asesoramiento para su Modelo de Negocio, Plan de Negocio, Orientacion de Herramientas tecnologicas para su flujo de proceso operativo, asesoramiento en su negocio en cualquier proceso de inicio, crecimiento o cierre, creacion de guias de flujos de trabajo e implementacion de metodologias de trabajo en equipo mediante la metodologia Agile.</p>
-                <a  class="btn botonase">Leer Mas</a>
+                <p class="resumen-eduavi">Proyecto tecnologico que orienta , facilita y conecta a los padres y profesores para una mejor comunicacion con sus niños con dificultades de aprendizaje</p>
+                <p class="completo-eduavi">Brinda un servicio mediante una app donde ofrecera una plataforma educativa para los papas para un aprendizaje efectivo en dificultades de aprendizaje y contara con un directorio actualizado de profesionales relacionados a la tematica para que los papas puedan acudir.</p>
+                <a  class="btn botoneduavi">Leer Mas</a>
             </div>
         </div>
       </section>
@@ -321,18 +333,14 @@
     </section>
     <section class="contact" id="contact">
         <h2 class="heading">Contacta<span>me!</span></h2>
-        <form action="#">
+        <form id="mensajeForm">
             <div class="input-box">
-                <input type="text" placeholder="Nombre Completo" required>
-                <input type="email" placeholder="Correo Electronico" required>
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre Completo" required>
+                <input type="email" name="email" id="email" placeholder="Correo Electronico" required>
             </div>
-            <div class="input-box">
-                <input type="number" placeholder="Celular" required>
-                <input type="text" placeholder="Asunto" required>
-            </div>
-            <textarea name="description" id="description" cols="30" rows="10" placeholder="Tu Mensaje" required></textarea>
-            <input type="submit" value="Enviar por Correo" class="btn">
-            <input type="submit" value="Enviar por Whastapp" class="btn">
+            <textarea name="description" id="descripcion" cols="30" rows="10" placeholder="Tu Mensaje" required></textarea>
+            <input type="submit"  id="correoButton" value="Enviar por Correo" class="btn">
+            <input type="submit" id="whastappButton" value="Enviar por Whastapp" class="btn">
         </form>
     </section>
     <footer class="footer">
